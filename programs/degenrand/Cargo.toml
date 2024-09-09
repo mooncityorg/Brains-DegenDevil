@@ -1,0 +1,26 @@
+[package]
+name = "degenrand"
+version = "0.1.0"
+description = "Created with Anchor"
+edition = "2018"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "degenrand"
+
+[features]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+cpi = ["no-entrypoint"]
+default = []
+test-bpf = []
+
+[dependencies]
+anchor-lang = { version = "0.22.1", features = ["init-if-needed"] }
+
+[dev-dependencies]
+rand = "0.8.5"
+solana-program-test = "1.9"
+solana-sdk = "1.9"
+solana-client = "=1.9.5"

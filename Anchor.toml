@@ -1,0 +1,26 @@
+[features]
+seeds = false
+
+[programs.localnet]
+degendevil = "H2LCFgiKNFwdZyVQoJFhhhygvvuV8twbfzJ8nJpJHgG1"
+degenrand = "EChzoztcpa48HFuQwbFinb6f1JhtUTJjDXjCchP4GP9g"
+
+[programs.devnet]
+degendevil = "H2LCFgiKNFwdZyVQoJFhhhygvvuV8twbfzJ8nJpJHgG1"
+degenrand = "EChzoztcpa48HFuQwbFinb6f1JhtUTJjDXjCchP4GP9g"
+
+[registry]
+url = "https://anchor.projectserum.com"
+
+[provider]
+# cluster = "localnet"
+cluster = "devnet"
+
+wallet = "./keys/id.json"
+
+
+[scripts]
+test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"
+update-fee = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 scripts/updateBetFee.ts"
+update-amount = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 scripts/updateBetAmount.ts"
+approve-token = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 scripts/updateAdminAta.ts"
